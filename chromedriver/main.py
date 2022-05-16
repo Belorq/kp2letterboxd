@@ -9,7 +9,7 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 options.add_argument("--disable-blink-features")
 options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_argument("--disable-infobars") 
-driver = webdriver.Chrome(executable_path="\\kp2letterboxed--\\chromedriver\\chromedriver.exe", options=options)
+driver = webdriver.Chrome(options=options)
 
 
 user_id = 'ENTER YOUR ID' 
@@ -47,7 +47,7 @@ def get_movies(user_id, data):
 def csv(data):
     df = pd.DataFrame(data, columns = ['Name', 'Year', 'Rating10'])
     df.set_index('Name', inplace=True)
-    df.to_csv('C:\\kp2letterboxed--\\chromedriver\\kp_data.csv', encoding='utf8')
+    df.to_csv(encoding='utf8')
 
 
 def main(user_id, data):
